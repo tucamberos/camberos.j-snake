@@ -6,6 +6,8 @@
 var snake;
 var snakeLength;
 var snakeSize;
+var snakeDirection;
+
 
 var food;
 
@@ -55,7 +57,7 @@ function gameDraw() {
     
       
 }
-/*----------------------------------------------------------
+/*----------- -----------------------------------------------
  * Snake Funnctions.
  * ---------------------------------------------------------
  */
@@ -63,6 +65,7 @@ function snakeInitialize() {
     snake = [];
     snakeLength = 10;
     snakeSize = 15;
+    snakeDirection = "down";
     
     for(var index = snakeLength -1; index > 0; index--) {
         snake.push({
@@ -81,7 +84,10 @@ function snakeDraw() {
 function snakeUpdate() {
     var snakeHeadX = snake[0].x;
     var snakeHeadY = snake[0].y;
-    snakeHeadX++;
+   
+   if(snakeDirection == "down"){
+       snakeHeadY++;
+   }
     
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
