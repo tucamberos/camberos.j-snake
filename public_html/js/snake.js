@@ -115,7 +115,7 @@ function snakeUpdate() {
 function foodInitialize() {
     food = {
         x: 0,
-        y: 0,
+        y: 0
     };
     setFoodPosition();
 }
@@ -164,11 +164,20 @@ function checkFoodCollision(snakeHeadX, snakeHeadY) {
        snake.push({
            x: 0,
            y: 0
-       })
+       });
        snakeLength++;
-        
+       
+       setFoodPosition();
     }
+    
 }
+    
+
+    
+
+    
+
+
 
     
     
