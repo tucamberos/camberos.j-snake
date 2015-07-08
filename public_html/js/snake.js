@@ -101,7 +101,7 @@ function snakeUpdate() {
         snakeHeadX--;
     }
   checkFoodCollision(snakeHeadX, snakeHeadY);
-  
+  checkFoodCollision(snakeHeadX, snakeHeadY);
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
@@ -171,7 +171,13 @@ function checkFoodCollision(snakeHeadX, snakeHeadY) {
     }
     
 }
-    
+function checkWallCollision(snakeHeadX, snakeHeadY) {
+    if(snakeHeadX * snakeSize >= screenWidth ||snakeHeadX * snakeSize < 0){
+        console.log("Wall Collision"); 
+            
+        } 
+        
+}
 
     
 
