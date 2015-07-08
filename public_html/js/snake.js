@@ -63,7 +63,7 @@ function gameDraw() {
  */
 function snakeInitialize() {
     snake = [];
-    snakeLength = 10;
+    snakeLength = 5;
     snakeSize = 15;
     snakeDirection = "down";
     snakeDirection = "up";
@@ -161,7 +161,11 @@ function keyboardHandler(event){
  */
 function checkFoodCollision(snakeHeadX, snakeHeadY) {
     if(snakeHeadX == food.x && snakeHeadY == food.y){
-        console.log("food Collision");
+       snake.push({
+           x: 0,
+           y: 0
+       })
+       snakeLength++;
         
     }
 }
