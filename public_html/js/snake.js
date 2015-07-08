@@ -101,7 +101,8 @@ function snakeUpdate() {
         snakeHeadX--;
     }
   checkFoodCollision(snakeHeadX, snakeHeadY);
-  checkFoodCollision(snakeHeadX, snakeHeadY);
+  checkWallCollision(snakeHeadX, snakeHeadY);
+  
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
