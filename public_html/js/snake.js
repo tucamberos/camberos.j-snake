@@ -2,7 +2,6 @@
  * variables
  *------------------------------------------------------------
  */
-
 var snake;
 var snakeLength;
 var snakeSize;
@@ -16,7 +15,8 @@ var screenWidth;
 var screenHeight;
 
 var gameState;
-var gameOverMenu;
+
+
 
 /*-----------------------------------------------------------
  * Executing Game code
@@ -45,10 +45,8 @@ function gameInitialize() {
     canvas.height = screenHeight;
 
     document.addEventListener("keydown", keyboardHandler);
-    gameOverMenu = document.getElementById("gameOver");
-    
 
-    setState("PLAY");
+   setState("PLAY");
 }
 
 function gameLoop() {
@@ -183,7 +181,7 @@ function checkFoodCollision(snakeHeadX, snakeHeadY) {
 }
 function checkWallCollision(snakeHeadX, snakeHeadY) {
     if (snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
-        setState("GAME OVER");
+
     }
 }
 /*
@@ -191,25 +189,6 @@ function checkWallCollision(snakeHeadX, snakeHeadY) {
  * Game state handling.
  * ---------------------------------------------------------------------------
  */
-
 function setState(state) {
-    game = state;
-    showMenu(state);
+    gameState = state;
 }
-
-function displayManu(menu) {
-    menu.style.visibility = "visible";
-}
-function showMenu(state) {
-    if(state == "GAME OVER") {
-        displayMeny(gameOverMenu);
-    }
-}
-
-
-
-
-
-
-
-

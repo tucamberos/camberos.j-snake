@@ -10,5 +10,25 @@ body {
 #gameOver {
     position: absolute;
     visibility: hidden;
-  
+
+}
+h1, h3 {
+    font-family: 'Lobster', cursive;
+    color: red;
+    text-align: center;
+
+}
+.title {
+    font-size: 60px;
+    margin: 0px;
+
+}
+
+#rstartButton {
+    border: 2px solid red;
+    border-radius: 10px;
+    
+}
+#restartButton:hover {
+    background-color:coral
 }
