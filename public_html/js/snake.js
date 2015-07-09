@@ -181,6 +181,7 @@ function checkFoodCollision(snakeHeadX, snakeHeadY) {
 }
 function checkWallCollision(snakeHeadX, snakeHeadY) {
     if (snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
+        setState("GAME OVER");
 
     }
 }
