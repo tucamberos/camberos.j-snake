@@ -52,7 +52,7 @@ function gameInitialize() {
     centerMenuPosition(gameOverMenu);
     
     restartButton = document.getElementById("restartButton");
-    restartButton.addEventListener("clik", gameRestart);
+    restartButton.addEventListener("click", gameRestart);
 
     setState("PLAY");
 
