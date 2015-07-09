@@ -15,6 +15,7 @@ var screenWidth;
 var screenHeight;
 
 var gameState;
+var gameOverMenu;
 
 
 
@@ -46,7 +47,10 @@ function gameInitialize() {
 
     document.addEventListener("keydown", keyboardHandler);
 
-   setState("PLAY");
+    gameOverMenu = document.getElementById("gameOver");
+
+    setState("PLAY");
+
 }
 
 function gameLoop() {
@@ -129,8 +133,7 @@ function foodInitialize() {
 }
 function foodDraw() {
     context.fillStyle = "white";
-    context.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize);
-
+    context.fillRect(food.x * snakeSize, food.y * snakeSize, snakeSize, snakeSize); 
 }
 
 function setFoodPosition() {
@@ -192,4 +195,20 @@ function checkWallCollision(snakeHeadX, snakeHeadY) {
  */
 function setState(state) {
     gameState = state;
+    showMenu(state);
 }
+
+function displayMenu(menu) {
+    menu.style.visibility = "visible";
+}
+
+function showMenu(state) {
+    if(state == "GAME OVER") {
+        displayMenu(gameOverMenu);
+    }
+}
+
+
+
+
+
