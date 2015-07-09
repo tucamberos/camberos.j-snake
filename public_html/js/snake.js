@@ -93,7 +93,7 @@ function gameRestart(){
  */
 function snakeInitialize() {
     snake = [];
-    snakeLength = 5;
+    snakeLength = 30;
     snakeSize = 15;
     snakeDirection = "down";
     snakeDirection = "up";
@@ -130,8 +130,9 @@ function snakeUpdate() {
     else if (snakeDirection == "left") {
         snakeHeadX--;
     }
-    checkFoodCollision(snakeHeadX, snakeHeadY);
-    checkWallCollision(snakeHeadX, snakeHeadY);
+    checkFoodCollisions(snakeHeadX, snakeHeadY);
+    checkWallCollisions(snakeHeadX, snakeHeadY);
+    checkSnakeCollisions(snakeHeadX, snakeHeadY);
 
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
@@ -189,7 +190,7 @@ function keyboardHandler(event) {
  * Collision Handling
  * ---------------------------------------------------------------------------
  */
-function checkFoodCollision(snakeHeadX, snakeHeadY) {
+function checkFoodCollisions(snakeHeadX, snakeHeadY) {
     if (snakeHeadX == food.x && snakeHeadY == food.y) {
         snake.push({
             x: 0,
@@ -201,11 +202,21 @@ function checkFoodCollision(snakeHeadX, snakeHeadY) {
     }
 
 }
-function checkWallCollision(snakeHeadX, snakeHeadY) {
+function checkWallCollisions(snakeHeadX, snakeHeadY) {
     if (snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
         setState("GAME OVER");
 
     }
+}
+
+function checkSnakecollisions(snakeHeadX, snakeHeadY) {
+    for(var index = 1; index < snake.Length; index++) {
+        if(snakeHeadX == snake[index].x && snakeHeadY == snake[index].y) {
+            setState("GAME OVER");
+            return;
+        }
+    }
+    
 }
 /*
  * ---------------------------------------------------------------------------
