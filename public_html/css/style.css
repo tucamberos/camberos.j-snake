@@ -32,4 +32,8 @@ h1, h2, h3 {
  #restartButton:hover {
      background-color: #009900;
  }
+ #scoreboard {
+     margin: 0px;
+     
+ }
    
