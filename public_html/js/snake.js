@@ -118,16 +118,16 @@ function snakeUpdate() {
     var snakeHeadX = snake[0].x;
     var snakeHeadY = snake[0].y;
 
-    if (snakeDirection == "down") {
+    if (snakeDirection === "down") {
         snakeHeadY++;
     }
-    else if (snakeDirection == "right") {
+    else if (snakeDirection === "right") {
         snakeHeadX++;
     }
-    if (snakeDirection == "up") {
+    if (snakeDirection === "up") {
         snakeHeadY--;
     }
-    else if (snakeDirection == "left") {
+    else if (snakeDirection === "left") {
         snakeHeadX--;
     }
     checkFoodCollisions(snakeHeadX, snakeHeadY);
@@ -209,7 +209,7 @@ function checkWallCollisions(snakeHeadX, snakeHeadY) {
     }
 }
 
-function checkSnakecollisions(snakeHeadX, snakeHeadY) {
+function checkSnakeCollisions(snakeHeadX, snakeHeadY) {
     for(var index = 1; index < snake.Length; index++) {
         if(snakeHeadX == snake[index].x && snakeHeadY == snake[index].y) {
             setState("GAME OVER");
